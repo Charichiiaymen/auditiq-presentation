@@ -1,0 +1,553 @@
+/* ============================================================
+   AuditIQ Thesis — Futuristic Dark Mode
+   Palette: deep indigo → violet → cyan
+   ============================================================ */
+
+:root {
+  --aiq-bg:        #050514;
+  --aiq-bg-soft:   #0b0b25;
+  --aiq-bg-card:   #0f1030;
+  --aiq-primary:   #6366f1;
+  --aiq-secondary: #8b5cf6;
+  --aiq-accent:    #06b6d4;
+  --aiq-glow:      #a78bfa;
+  --aiq-success:   #22c55e;
+  --aiq-warning:   #f59e0b;
+  --aiq-danger:    #ef4444;
+  --aiq-text:      #e5e7ff;
+  --aiq-text-mute: #9ca3c4;
+  --aiq-border:    rgba(139, 92, 246, 0.25);
+
+  --slidev-theme-primary: var(--aiq-primary);
+  --slidev-theme-accent:  var(--aiq-secondary);
+  --slidev-theme-text:    var(--aiq-text);
+  --slidev-theme-bg:      var(--aiq-bg);
+}
+
+.slidev-layout {
+  background: transparent;
+  color: var(--aiq-text);
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.slidev-page {
+  background: radial-gradient(ellipse at top, #0b0b25 0%, #050514 60%, #02020a 100%);
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.slidev-layout h1 {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 24px rgba(99, 102, 241, 0.35));
+}
+
+.aiq-card {
+  background: linear-gradient(160deg, rgba(99, 102, 241, 0.06), rgba(139, 92, 246, 0.03));
+  border: 1px solid var(--aiq-border);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(2, 2, 10, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.aiq-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--aiq-glow);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.25);
+}
+
+.aiq-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(6, 182, 212, 0.08));
+  border: 1px solid var(--aiq-border);
+}
+.aiq-stat .num {
+  font-size: 2.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+.aiq-stat .lbl {
+  font-size: 0.85rem;
+  color: var(--aiq-text-mute);
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.aiq-gradient-border {
+  position: relative;
+  border-radius: 14px;
+  background: var(--aiq-bg-card);
+  padding: 1.25rem;
+}
+.aiq-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.aiq-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--aiq-glow);
+  border: 1px solid var(--aiq-border);
+}
+.aiq-chip-cyan  { background: rgba(6, 182, 212, 0.12); color: #67e8f9; }
+.aiq-chip-green { background: rgba(34, 197, 94, 0.12); color: #86efac; }
+.aiq-chip-amber { background: rgba(245, 158, 11, 0.12); color: #fcd34d; }
+.aiq-chip-red   { background: rgba(239, 68, 68, 0.12);  color: #fca5a5; }
+
+.aiq-grid-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.aiq-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--aiq-glow), transparent);
+  margin: 1.5rem 0;
+}
+
+.aiq-subtitle { color: var(--aiq-text-mute); font-size: 1.15rem; font-weight: 400; }
+.aiq-meta { color: var(--aiq-text-mute); font-size: 0.85rem; letter-spacing: 0.02em; }
+
+.slidev-vclick-target {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.slidev-layout pre {
+  background: rgba(5, 5, 20, 0.85) !important;
+  border: 1px solid var(--aiq-border) !important;
+  border-radius: 12px !important;
+}
+.slidev-layout code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+  font-size: 0.85em !important;
+}
+
+/* --- Terminal / CLI cards (Ninja Scraper) --- */
+.slidev-layout .aiq-term-card {
+  position: relative;
+  background: linear-gradient(160deg, rgba(5, 5, 20, 0.85), rgba(15, 16, 48, 0.65));
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  border-left: 3px solid var(--aiq-accent);
+  border-radius: 10px;
+  padding: 0.85rem 1.2rem 0.95rem 1.35rem;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  box-shadow: 0 4px 24px rgba(2, 2, 10, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+.slidev-layout .aiq-term-card.aiq-term-cyan   { border-left-color: #06b6d4; }
+.slidev-layout .aiq-term-card.aiq-term-green  { border-left-color: #22c55e; }
+.slidev-layout .aiq-term-card.aiq-term-amber  { border-left-color: #f59e0b; }
+.slidev-layout .aiq-term-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.slidev-layout .aiq-term-card.aiq-term-cyan:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.slidev-layout .aiq-term-card.aiq-term-green:hover {
+  border-color: #22c55e;
+  box-shadow: 0 12px 40px rgba(34, 197, 94, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.slidev-layout .aiq-term-card.aiq-term-amber:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 12px 40px rgba(245, 158, 11, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.slidev-layout .aiq-term-step {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.9rem;
+  font-size: 0.65rem;
+  color: rgba(156, 163, 196, 0.55);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.slidev-layout .aiq-term-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--aiq-text);
+  line-height: 1.3;
+}
+.slidev-layout .aiq-term-prompt {
+  color: var(--aiq-accent);
+  font-weight: 700;
+  font-size: 1.05rem;
+  user-select: none;
+}
+.slidev-layout .aiq-term-card.aiq-term-green .aiq-term-prompt { color: #22c55e; }
+.slidev-layout .aiq-term-card.aiq-term-amber .aiq-term-prompt { color: #f59e0b; }
+.slidev-layout .aiq-term-comment {
+  margin: 0.35rem 0 0 1.25rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--aiq-text-mute);
+  font-style: italic;
+}
+.slidev-layout .aiq-term-prompt-bar {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--aiq-text-mute);
+  background: rgba(5, 5, 20, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  border-radius: 6px;
+  padding: 0.25rem 0.65rem;
+  letter-spacing: 0.04em;
+}
+
+.slidev-layout table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.slidev-layout th {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.18), rgba(139, 92, 246, 0.10));
+  color: var(--aiq-glow);
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+}
+.slidev-layout td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.10);
+}
+.slidev-layout tr:hover td {
+  background: rgba(99, 102, 241, 0.04);
+}
+
+/* ============================================================
+   Core Web Vitals T0 → T3 table — scrim/severity styling
+   ------------------------------------------------------------
+   Applied via per-slide `class: aiq-cwv` frontmatter (see
+   @slidev/types SlideInfo.class, line 646 of index.d.mts) so
+   these rules only target the CWV slide's table. The table
+   itself is unmodified — every effect is purely cosmetic.
+   ============================================================ */
+
+.slidev-layout.aiq-cwv table {
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.92rem;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px -10px rgba(2, 2, 10, 0.6);
+}
+
+/* slightly larger header row, with a left-aligned label and
+   right-aligned numeric columns (T0, T3, Δ, Signification) */
+.slidev-layout.aiq-cwv table th {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.14));
+  color: var(--aiq-glow);
+  text-align: left;
+  padding: 0.85rem 1.1rem;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.30);
+}
+.slidev-layout.aiq-cwv table th:nth-child(n+2) {
+  text-align: right;
+}
+
+.slidev-layout.aiq-cwv table td {
+  padding: 0.95rem 1.1rem;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.12);
+  vertical-align: middle;
+  position: relative;
+}
+
+/* bold the metric name in the first column */
+.slidev-layout.aiq-cwv table td:first-child {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  color: var(--aiq-text);
+  text-align: left;
+}
+
+/* right-align the four numeric/significance columns */
+.slidev-layout.aiq-cwv table td:nth-child(n+2) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.95rem;
+}
+
+/* ------------------------------------------------------------
+   Severity washes on T0 (red, "baseline = bad") and T3 (green,
+   "after AuditIQ = good") cells. Subtle, not garish.
+   ------------------------------------------------------------ */
+.slidev-layout.aiq-cwv table td:nth-child(2) {
+  color: #fca5a5;
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.10), rgba(239, 68, 68, 0.02));
+}
+.slidev-layout.aiq-cwv table td:nth-child(3) {
+  color: #86efac;
+  font-weight: 700;
+  background: linear-gradient(90deg, rgba(34, 197, 94, 0.02), rgba(34, 197, 94, 0.12));
+}
+
+/* Delta column: green-tinted text, with a small ▼ arrow as a
+   ::before to visually convey "decreased" / "improved" */
+.slidev-layout.aiq-cwv table td:nth-child(4) {
+  color: #86efac;
+  font-weight: 600;
+}
+.slidev-layout.aiq-cwv table td:nth-child(4)::before {
+  content: '▼';
+  display: inline-block;
+  margin-right: 0.35rem;
+  color: #22c55e;
+  font-size: 0.7rem;
+  vertical-align: 2px;
+}
+
+/* Signification column: paint a soft green pill behind the cell
+   to act as a "significance badge" background. CSS can't read
+   the cell's text content, so the colored wash + bold green
+   lettering is what makes "p < 0,001" read as a verdict pill. */
+.slidev-layout.aiq-cwv table td:nth-child(5) {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.10), rgba(6, 182, 212, 0.06));
+  border-left: 2px solid rgba(34, 197, 94, 0.35);
+  text-align: center;
+  font-weight: 700;
+  color: #86efac;
+  letter-spacing: 0.02em;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.82rem;
+}
+
+/* ------------------------------------------------------------
+   Row hover: gentle lift with the row's accent color.
+   ------------------------------------------------------------ */
+.slidev-layout.aiq-cwv table tbody tr {
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.slidev-layout.aiq-cwv table tbody tr:hover td {
+  background: rgba(139, 92, 246, 0.05);
+}
+.slidev-layout.aiq-cwv table tbody tr:hover td:nth-child(2) {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.18), rgba(239, 68, 68, 0.04));
+}
+.slidev-layout.aiq-cwv table tbody tr:hover td:nth-child(3) {
+  background: linear-gradient(90deg, rgba(34, 197, 94, 0.04), rgba(34, 197, 94, 0.22));
+}
+
+/* ------------------------------------------------------------
+   Last row: close the table with no underline (rounded bottom)
+   ------------------------------------------------------------ */
+.slidev-layout.aiq-cwv table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* tiny vertical padding rescue — keep the table compact */
+@media (max-width: 900px) {
+  .slidev-layout.aiq-cwv table th,
+  .slidev-layout.aiq-cwv table td {
+    padding: 0.7rem 0.7rem;
+  }
+}
+
+.slidev-page-info {
+  color: var(--aiq-text-mute) !important;
+  font-size: 0.75rem;
+}
+
+.slidev-layout.cover,
+.slidev-layout.intro {
+  background: radial-gradient(ellipse at center, #1e1b4b 0%, #050514 70%);
+}
+
+@media print {
+  html, body { background: #050514 !important; }
+}
+
+/* ============================================================
+   Pipeline / Process Flow — "Cognitive Engine" stepper
+   ------------------------------------------------------------
+   A 4-stage flow: circular icon nodes on a rail, per-step accent
+   colour that walks indigo -> violet -> glow -> cyan (matching
+   the palette comment at the top of this file), an ambient
+   "data flowing" pulse on the rail, and a staggered reveal that
+   rides Slidev's own v-click opacity/transform transition
+   (see .slidev-vclick-target below — this is the documented
+   Slidev customization hook, scoped here to .aiq-pipeline-step
+   only so it doesn't affect v-click elsewhere in the deck).
+
+   Usage: give each .aiq-pipeline-step its own bare `v-click`
+   (auto-incrementing) and a `--step-color` inline custom
+   property. Steps 2-4 also carry an .aiq-pipeline-fill child
+   with --fill-w / --fill-grad set, which draws the rail segment
+   in behind the node as that step's click fires.
+   ============================================================ */
+
+.aiq-pipeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.aiq-pipeline-track {
+  position: absolute;
+  top: 1.875rem;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: rgba(139, 92, 246, 0.14);
+  overflow: hidden;
+  border-radius: 2px;
+}
+.aiq-pipeline-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25%;
+  width: 22%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #a78bfa 45%, #06b6d4 55%, transparent);
+  animation: aiq-flow 3.2s ease-in-out infinite;
+  opacity: 0.85;
+}
+@keyframes aiq-flow {
+  0%   { left: -25%; }
+  100% { left: 103%; }
+}
+
+.aiq-pipeline-fill {
+  position: absolute;
+  top: 1.875rem;
+  left: 12.5%;
+  width: var(--fill-w, 0%);
+  height: 2px;
+  border-radius: 2px;
+  background: var(--fill-grad);
+  box-shadow: 0 0 10px -1px var(--step-color);
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.aiq-pipeline-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+  padding: 0 0.4rem;
+  transform: translateY(0) scale(1);
+}
+/* documented Slidev hook: transform applied only while this
+   specific element is the pre-click hidden state */
+.aiq-pipeline-step.slidev-vclick-hidden {
+  transform: translateY(14px) scale(0.94);
+}
+.aiq-pipeline-step.slidev-vclick-hidden .aiq-pipeline-fill {
+  transform: scaleX(0);
+}
+
+.aiq-pipeline-node {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.07), var(--aiq-bg-card) 72%);
+  border: 1.5px solid var(--step-color, var(--aiq-primary));
+  color: var(--step-color, var(--aiq-primary));
+  box-shadow: 0 4px 18px -5px var(--step-color, var(--aiq-primary));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.aiq-pipeline-node svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.aiq-pipeline-step:hover .aiq-pipeline-node {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 26px -4px var(--step-color, var(--aiq-primary));
+}
+
+/* the hero stage — Inférence is literally the subject of this
+   slide, so it gets the one bold, continuous signature move */
+.aiq-pipeline-step.aiq-pipeline-hero .aiq-pipeline-node {
+  animation: aiq-pulse-ring 2.4s ease-in-out infinite;
+}
+@keyframes aiq-pulse-ring {
+  0%, 100% { box-shadow: 0 4px 18px -5px var(--step-color); }
+  50%      { box-shadow: 0 6px 32px 2px var(--step-color); }
+}
+
+.aiq-pipeline-num {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--step-color, var(--aiq-primary));
+  margin-top: 0.6rem;
+  opacity: 0.9;
+}
+.aiq-pipeline-label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--aiq-text);
+  margin-top: 0.05rem;
+}
+.aiq-pipeline-desc {
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--aiq-text-mute);
+  margin: 0.3rem 0 0;
+}
