@@ -424,7 +424,7 @@ flowchart LR
 <div v-click class="aiq-card">
 
 **Diagnostic technique**
-<p class="aiq-meta">LCP, INP, CLS — mesurés, pas estimés</p>
+<p class="aiq-meta">LCP, FCP, CLS — mesurés, pas estimés</p>
 
 </div>
 
@@ -606,8 +606,8 @@ layout: two-cols
 </div>
 
 <div v-click class="aiq-card" style="padding: 0.75rem 1.1rem; margin-right: 1.25rem;">
-<span class="aiq-chip aiq-chip-cyan">INP</span>
-<p class="aiq-meta mt-1" style="font-size: 0.85rem; line-height: 1.35;">Interaction to Next Paint — réactivité perçue par l'utilisateur</p>
+<span class="aiq-chip aiq-chip-cyan">FCP</span>
+<p class="aiq-meta mt-1" style="font-size: 0.85rem; line-height: 1.35;">First Contentful Paint — premier affichage de contenu textuel ou visuel</p>
 </div>
 
 <div v-click class="aiq-card" style="padding: 0.75rem 1.1rem; margin-right: 1.25rem;">
